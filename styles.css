@@ -1,6 +1,6 @@
 body {
   margin: 50px 30px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 ul {
@@ -24,6 +24,8 @@ ul {
   font-size: 1.5rem;
   margin-top: 5px;
   border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
 }
 
 .row li:nth-child(1) {
@@ -32,7 +34,15 @@ ul {
 .row li:nth-child(3) {
   width: 40%;
 }
+.row li:nth-child(2) {
+  justify-content: center;
+}
+.row li:nth-child(4) {
+  justify-content: center;
+}
 input {
   width: 70%;
+  height: 70%;
   margin: 0 10px;
+  font-size: 1.5rem;
 }
