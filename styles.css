@@ -1,5 +1,6 @@
 body {
   margin: 50px 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 ul {
@@ -7,9 +8,8 @@ ul {
 }
 
 .main {
-    width: 30%;
-  padding: 15px;
-  min-width: 500px;
+    width: 50%;
+  min-width: 600px;
   margin: 0 auto;
 }
 
@@ -21,15 +21,18 @@ ul {
 }
 
 .row li {
-  width: 50px;
+  width: 20%;
+  font-size: 1.2rem;
+  margin-top: 5px;
 }
 
 .row li:nth-child(1) {
-  width: 200px;
+  width: 40%;
 }
 .row li:nth-child(3) {
-  width: 150px;
+  width: 40%;
 }
 input {
-  width: 30px;
+  width: 70%;
+  margin: 0 10px;
 }
