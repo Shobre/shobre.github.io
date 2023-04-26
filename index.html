@@ -8,52 +8,157 @@
     <div class="main">
       <h1>Mowin nr- Arbete, namn - datum</h1>
       <ul class="row">
-        <li>Pålägg på nettopris %</li>
+        <li>Pålägg på nettopris %:</li>
         <li><input type="number" /></li>
-        <li>Vinst tid</li>
+        <li>Vinst tid:</li>
         <li>0</li>
       </ul>
       <ul class="row">
-        <li>Timdebitering arbetstid</li>
+        <li>Timdebitering arbetstid:</li>
         <li><input type="number" /></li>
-        <li>Vinst Mtrl</li>
+        <li>Vinst Mtrl:</li>
         <li>0</li>
       </ul>
       <ul class="row">
-        <li>Vinst inhyrda tjänster</li>
+        <li>Vinst inhyrda tjänster:</li>
         <li>0</li>
-        <li>Total vinst</li>
+        <li>Total vinst:</li>
         <li>0</li>
       </ul>
-      <ul class="row">
+      <ul class="row vinst-row">
         <li></li>
         <li></li>
-        <li>Vinst %</li>
-        <li>0</li>
-      </ul>
-      <br>
-      <ul class="row">
-        <li>Totalpris ex moms</li>
-        <li>0</li>
-        <li>Totalpris ink moms</li>
+        <li>Vinst %:</li>
         <li>0</li>
       </ul>
       <ul class="row">
-        <li>Totalpris ink moms & rot</li>
+        <li>Totalpris ex moms:</li>
         <li>0</li>
-        <li>Bidrag rot</li>
-        <li>0</li>
-      </ul>
-      <ul class="row">
-        <li>Totalpris solcell</li>
-        <li>0</li>
-        <li>Bidrag solcell</li>
+        <li>Totalpris ink moms:</li>
         <li>0</li>
       </ul>
       <ul class="row">
-        <li>Totalpris laddare / batteri</li>
+        <li>Totalpris ink moms & rot:</li>
         <li>0</li>
-        <li>Bidrag laddare/ batteri</li>
+        <li>Bidrag rot:</li>
+        <li>0</li>
+      </ul>
+      <ul class="row">
+        <li>Totalpris laddare / batteri:</li>
+        <li>0</li>
+        <li>Bidrag laddare/ batteri:</li>
+        <li>0</li>
+      </ul>
+    </div>
+    <div id="rader" class="rader">
+      <ul class="row header">
+        <li>Enummer</li>
+        <li>Beskrivning</li>
+        <li>Enhet</li>
+        <li>Antal</li>
+        <li>A-pris</li>
+        <li>Utpris</li>
+        <li>Totalt</li>
+        <li>Total A-pris</li>
+      </ul>
+      <ul class="row">
+        <li><input type="text" /></li>
+        <li><input type="text" /></li>
+        <li><input type="text" /></li>
+        <li><input type="number" /></li>
+        <li><input type="number" /></li>
+        <li>0</li>
+        <li>0</li>
+        <li>0</li>
+      </ul>
+      <ul class="row">
+        <li><input type="text" /></li>
+        <li><input type="text" /></li>
+        <li><input type="text" /></li>
+        <li><input type="number" /></li>
+        <li><input type="number" /></li>
+        <li>0</li>
+        <li>0</li>
+        <li>0</li>
+      </ul>
+      <ul class="row">
+        <li><input type="text" /></li>
+        <li><input type="text" /></li>
+        <li><input type="text" /></li>
+        <li><input type="number" /></li>
+        <li><input type="number" /></li>
+        <li>0</li>
+        <li>0</li>
+        <li>0</li>
+      </ul>
+    </div>
+    <div class="btn-container"><button class="btn-add">+</button></div>
+    <div class="arbkost">
+      <h2>Arbetskostnad</h2>
+      <ul class="row">
+        <li>Antal tim:</li>
+        <li><input type="number" /></li>
+        <li>Tim/dag:</li>
+        <li><input type="number" /></li>
+        <li>Dagar:</li>
+        <li><input type="number" /></li>
+        <li>Gubbar:</li>
+        <li><input type="number" /></li>
+      </ul>
+      <ul class="row summa">
+        <li>Summa:</li>
+        <li>0</li>
+      </ul>
+    </div>
+    <div class="arbkost">
+      <h2>Resor</h2>
+      <ul class="row">
+        <li>KM enkel:</li>
+        <li><input type="number" /></li>
+        <li>Restid:</li>
+        <li><input type="number" /></li>
+      </ul>
+      <ul class="row summa">
+        <li>Summa:</li>
+        <li>0</li>
+      </ul>
+    </div>
+    <div class="arbkost">
+      <h2>Bil</h2>
+      <ul class="row">
+        <li>KM kost:</li>
+        <li><input type="number" /></li>
+        <li>Antal bil:</li>
+        <li><input type="number" /></li>
+      </ul>
+      <ul class="row summa">
+        <li>Summa:</li>
+        <li>0</li>
+      </ul>
+    </div>
+    <div class="arbkost">
+      <h2>Projektering</h2>
+      <ul class="row">
+        <li>Antal tim:</li>
+        <li><input type="number" /></li>
+        <li>Timkostnad:</li>
+        <li><input type="number" /></li>
+      </ul>
+      <ul class="row summa">
+        <li>Summa:</li>
+        <li>0</li>
+      </ul>
+    </div>
+    <div class="arbkost">
+      <h2>Våran lift</h2>
+      <ul class="row">
+        <li>:-/tim:</li>
+        <li><input type="number" /></li>
+        <li>Tim:</li>
+        <li><input type="number" /></li>
+      </ul>
+      <ul class="row summa">
+        <li>Summa:</li>
         <li>0</li>
       </ul>
     </div>
