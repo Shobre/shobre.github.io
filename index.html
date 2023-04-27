@@ -4,50 +4,53 @@
     <script src="main.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body onload="init()">
     <div class="main">
       <h1>Mowin nr- Arbete, namn - datum</h1>
       <ul class="row">
         <li>Pålägg på nettopris %:</li>
-        <li><input type="number" /></li>
+        <li>
+          <input
+            id="nettoPris"
+            type="number"
+            onkeyup="nettOnChange(value)"
+            value="42"
+          />
+        </li>
         <li>Vinst tid:</li>
-        <li>0</li>
+        <li id="vinstTidVal">0</li>
       </ul>
       <ul class="row">
         <li>Timdebitering arbetstid:</li>
-        <li><input type="number" /></li>
+        <li>
+          <input id="timdebit" type="number" onkeyup="timdebitOnChange(value)" value="575" />
+        </li>
         <li>Vinst Mtrl:</li>
-        <li>0</li>
-      </ul>
-      <ul class="row">
-        <li>Vinst inhyrda tjänster:</li>
-        <li>0</li>
-        <li>Total vinst:</li>
-        <li>0</li>
+        <li id="vinstMtrl">0</li>
       </ul>
       <ul class="row vinst-row">
-        <li></li>
-        <li></li>
         <li>Vinst %:</li>
-        <li>0</li>
+        <li id="vinstproc">0%</li>
+        <li>Total vinst:</li>
+        <li id="totalVinst">0</li>
       </ul>
       <ul class="row">
         <li>Totalpris ex moms:</li>
-        <li>0</li>
+        <li id="totalPrisExMoms">0</li>
         <li>Totalpris ink moms:</li>
-        <li>0</li>
+        <li id="totalPrisInklMoms">0</li>
       </ul>
       <ul class="row">
         <li>Totalpris ink moms & rot:</li>
-        <li>0</li>
+        <li id="totprisInkMomsRot">0</li>
         <li>Bidrag rot:</li>
-        <li>0</li>
+        <li id="bidragRot">0</li>
       </ul>
       <ul class="row">
         <li>Totalpris laddare / batteri:</li>
-        <li>0</li>
+        <li id="totPrisLaddBatt">0</li>
         <li>Bidrag laddare/ batteri:</li>
-        <li>0</li>
+        <li id="bidragLaddBatt">0</li>
       </ul>
     </div>
     <div id="rader" class="rader">
@@ -65,88 +68,95 @@
         <li><input type="text" /></li>
         <li><input type="text" /></li>
         <li><input type="text" /></li>
-        <li><input type="number" /></li>
-        <li><input type="number" /></li>
-        <li>0</li>
-        <li>0</li>
-        <li>0</li>
-      </ul>
-      <ul class="row">
-        <li><input type="text" /></li>
-        <li><input type="text" /></li>
-        <li><input type="text" /></li>
-        <li><input type="number" /></li>
-        <li><input type="number" /></li>
-        <li>0</li>
-        <li>0</li>
-        <li>0</li>
-      </ul>
-      <ul class="row">
-        <li><input type="text" /></li>
-        <li><input type="text" /></li>
-        <li><input type="text" /></li>
-        <li><input type="number" /></li>
-        <li><input type="number" /></li>
+        <li><input id="antal1" type="number" value="0" /></li>
+        <li><input id="apris1" type="number" value="0" /></li>
         <li>0</li>
         <li>0</li>
         <li>0</li>
       </ul>
     </div>
-    <div class="btn-container"><button class="btn-add">+</button></div>
+    <div id="rader-summa" class="rader rader-summa">
+      <ul class="row">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li>Summa:</li>
+        <li id="apris-summa">0</li>
+        <li id="utpris-summa">0</li>
+        <li id="totalt-summa">0</li>
+        <li id="totalapris-summa">0</li>
+      </ul>
+    </div>
+    <div class="btn-container">
+      <button class="btn-add" onclick="addRow()">Lägg till rad</button>
+    </div>
     <div class="arbkost">
       <h2>Arbetskostnad</h2>
       <ul class="row">
         <li>Antal tim:</li>
-        <li><input type="number" /></li>
+        <li><input id="arb-antal-tim" type="number" value="0" onkeyup="arbAntalOnChange()"/></li>
         <li>Tim/dag:</li>
-        <li><input type="number" /></li>
+        <li><input id="arb-tim-dag" type="number" value="8" /></li>
         <li>Dagar:</li>
-        <li><input type="number" /></li>
+        <li><input id="arb-dagar" type="number" value="0" /></li>
         <li>Gubbar:</li>
-        <li><input type="number" /></li>
+        <li><input id="arb-gubbar" type="number" value="1" /></li>
       </ul>
       <ul class="row summa">
         <li>Summa:</li>
-        <li>0</li>
+        <li id="arbkost-summa">0</li>
       </ul>
     </div>
     <div class="arbkost">
       <h2>Resor</h2>
       <ul class="row">
         <li>KM enkel:</li>
-        <li><input type="number" /></li>
+        <li><input type="number" value="0" /></li>
         <li>Restid:</li>
-        <li><input type="number" /></li>
+        <li><input type="number" value="0.0" /></li>
       </ul>
       <ul class="row summa">
         <li>Summa:</li>
-        <li>0</li>
+        <li id="resor-summa">0</li>
       </ul>
     </div>
     <div class="arbkost">
       <h2>Bil</h2>
       <ul class="row">
         <li>KM kost:</li>
-        <li><input type="number" /></li>
+        <li><input type="number" value="10.0" /></li>
         <li>Antal bil:</li>
-        <li><input type="number" /></li>
+        <li><input type="number" value="1" /></li>
       </ul>
       <ul class="row summa">
         <li>Summa:</li>
-        <li>0</li>
+        <li id="bil-summa">0</li>
       </ul>
     </div>
     <div class="arbkost">
       <h2>Projektering</h2>
       <ul class="row">
         <li>Antal tim:</li>
-        <li><input type="number" /></li>
+        <li><input id="pro-antal-tim" type="number" value="0" onkeyup="proAntalTimOnChange()"/></li>
         <li>Timkostnad:</li>
-        <li><input type="number" /></li>
+        <li><input id="pro-timkostnad" type="number" value="700" /></li>
       </ul>
       <ul class="row summa">
         <li>Summa:</li>
-        <li>0</li>
+        <li id="pro-summa">0</li>
+      </ul>
+    </div>
+    <div class="arbkost">
+      <h2>Våran lift</h2>
+      <ul class="row">
+        <li>:-/tim:</li>
+        <li><input id="varlift-sek-tim" type="number" value="540" /></li>
+        <li>Tim:</li>
+        <li><input id="varlift-tim" type="number" value="0" onkeyup="varliftTimOnChange()"/></li>
+      </ul>
+      <ul class="row summa">
+        <li>Summa:</li>
+        <li id="varanLift-summa">0</li>
       </ul>
     </div>
   </body>

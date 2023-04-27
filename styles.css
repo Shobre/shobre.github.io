@@ -13,6 +13,19 @@ input {
   margin: 5px 10px;
   font-size: 1.65rem;
   text-align: center;
+  background-color: lightgoldenrodyellow;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .main,
@@ -23,8 +36,18 @@ input {
   max-width: 900px;
 }
 
-.rader, .arbkost {
+.rader,
+.arbkost {
   margin-top: 80px;
+}
+
+.rader-summa {
+  margin-top: 5px;
+  border-bottom: 1px solid black;
+}
+.rader.rader-summa .row li {
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .row {
@@ -64,6 +87,7 @@ input {
   font-size: 1.4rem;
   flex-grow: 1;
   width: 10%;
+  height: 40px;
   border-bottom: 1px solid lightgray;
 }
 
@@ -78,7 +102,7 @@ input {
 .rader .row.header {
   border-bottom: 1px solid black;
 }
-.rader .row.header li{
+.rader .row.header li {
   font-weight: 600;
 }
 
@@ -92,7 +116,7 @@ input {
   border-top: 0;
   border-left: 0;
 }
-.rader .row li:nth-child(1) input  {
+.rader .row li:nth-child(1) input {
   border-left: 2px solid grey;
 }
 
@@ -107,11 +131,12 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  font-size: 3rem;
-  font-weight: 100;
+  width: 130px;
+  height: 65px;
+  border-radius: 70px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: lightblue;
 }
 
 .arbkost .row li {
@@ -125,7 +150,6 @@ input {
 .arbkost .row li:nth-child(2),
 .arbkost .row li:nth-child(4),
 .arbkost .row li:nth-child(6) {
-
 }
 
 .arbkost .row {
@@ -136,7 +160,7 @@ input {
   width: 100%;
 }
 
-.row.summa li{
+.row.summa li {
   margin-top: 20px;
   font-size: 1.6rem;
   font-weight: 600;
